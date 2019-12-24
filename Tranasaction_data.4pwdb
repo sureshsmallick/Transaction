@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkspaceDatabase fileContentsEncoding="CP1252" version="3.0">
+<File n="sql.4gl" s="2" ts="20191224093912720">
+<Fct c="10" el="75" l="32" n="display_custlist()" t="F" v="pub">
+<Call c="14" l="53" n="custlist_fill" t="F"/>
+<Call c="14" l="56" n="custlist_fill" t="F"/>
+</Fct>
+<Fct c="10" el="30" l="12" n="custlist_fill(where_clause STRING)" t="F" v="pub"/>
+</File>
+<File n="sqlorder.4gl" s="2" ts="20191224093913029">
+<Fct c="10" el="628" l="620" n="__mbox_yn(title STRING,message STRING,icon STRING)" t="F" v="pub"/>
+<Fct c="10" el="618" l="613" n="__mbox_ok(title STRING,message STRING,icon STRING)" t="F" v="pub"/>
+<Fct c="10" el="611" l="593" n="item_delete(curr_pa SMALLINT)" t="F" v="pub">
+<Call c="11" l="604" n="order_total" t="F"/>
+<Call c="11" l="607" n="__mbox_ok" t="F"/>
+</Fct>
+<Fct c="10" el="591" l="572" n="item_update(curr_pa SMALLINT)" t="F" v="pub">
+<Call c="11" l="584" n="order_total" t="F"/>
+<Call c="11" l="587" n="__mbox_ok" t="F"/>
+</Fct>
+<Fct c="10" el="570" l="544" n="item_insert(curr_pa SMALLINT)" t="F" v="pub">
+<Call c="11" l="563" n="order_total" t="F"/>
+<Call c="11" l="566" n="__mbox_ok" t="F"/>
+</Fct>
+<Fct c="10" el="542" l="506" n="get_stock_info(curr_pa SMALLINT,id INTEGER)" t="F" v="pub">
+<Call c="11" l="534" n="__mbox_ok" t="F"/>
+</Fct>
+<Fct c="10" el="504" l="494" n="order_total()" t="F" v="pub"/>
+<Fct c="10" el="492" l="488" n="items_line_total(curr_pa SMALLINT)" t="F" v="pub"/>
+<Fct c="10" el="486" l="477" n="order_move(dir SMALLINT)" t="F" v="pub">
+<Call c="10" l="481" n="order_fetch" t="F"/>
+</Fct>
+<Fct c="10" el="475" l="446" n="items_fetch()" t="F" v="pub">
+<Call c="8" l="473" n="order_total" t="F"/>
+</Fct>
+<Fct c="10" el="444" l="406" n="order_fetch(dir SMALLINT)" t="F" v="pub">
+<Call c="8" l="440" n="items_fetch" t="F"/>
+</Fct>
+<Fct c="10" el="404" l="374" n="order_select(where_clause STRING)" t="F" v="pub">
+<Call c="11" l="397" n="__mbox_ok" t="F"/>
+<Call c="10" l="402" n="order_fetch" t="F"/>
+</Fct>
+<Fct c="10" el="372" l="326" n="order_query()" t="F" v="pub">
+<Call c="13" l="344" n="display_custlist" t="F"/>
+<Call c="13" l="351" n="__mbox_ok" t="F"/>
+<Call c="12" l="358" n="__mbox_yn" t="F"/>
+<Call c="9" l="365" n="order_select" t="F"/>
+</Fct>
+<Fct c="10" el="324" l="299" n="order_update(d ui.Dialog)" t="F" v="pub">
+<Call c="10" l="302" n="order_validate" t="F"/>
+<Call c="11" l="315" n="__mbox_ok" t="F"/>
+</Fct>
+<Fct c="10" el="297" l="280" n="order_validate(d ui.Dialog)" t="F" v="pub">
+<Call c="10" l="291" n="order_check_store_num" t="F"/>
+</Fct>
+<Fct c="10" el="278" l="265" n="order_check_store_num()" t="F" v="pub"/>
+<Fct c="10" el="263" l="215" n="order_new()" t="F" v="pub">
+<Call c="11" l="251" n="__mbox_ok" t="F"/>
+</Fct>
+<Fct c="10" el="213" l="69" n="orditems_dialog()" t="F" v="pub">
+<Call c="15" l="82" n="order_update" t="F"/>
+<Call c="13" l="83" n="order_query" t="F"/>
+<Call c="15" l="86" n="order_update" t="F"/>
+<Call c="15" l="87" n="order_new" t="F"/>
+<Call c="15" l="92" n="order_update" t="F"/>
+<Call c="15" l="95" n="order_check_store_num" t="F"/>
+<Call c="13" l="98" n="display_custlist" t="F"/>
+<Call c="15" l="106" n="order_update" t="F"/>
+<Call c="15" l="109" n="order_update" t="F"/>
+<Call c="13" l="110" n="order_move" t="F"/>
+<Call c="15" l="112" n="order_update" t="F"/>
+<Call c="13" l="113" n="order_move" t="F"/>
+<Call c="15" l="115" n="order_update" t="F"/>
+<Call c="13" l="116" n="order_move" t="F"/>
+<Call c="15" l="118" n="order_update" t="F"/>
+<Call c="13" l="119" n="order_move" t="F"/>
+<Call c="17" l="144" n="item_delete" t="F"/>
+<Call c="17" l="157" n="item_insert" t="F"/>
+<Call c="15" l="160" n="items_line_total" t="F"/>
+<Call c="17" l="163" n="item_update" t="F"/>
+<Call c="15" l="166" n="items_line_total" t="F"/>
+<Call c="17" l="170" n="display_stocklist" t="F"/>
+<Call c="18" l="172" n="get_stock_info" t="F"/>
+<Call c="15" l="181" n="get_stock_info" t="F"/>
+<Call c="16" l="184" n="__mbox_ok" t="F"/>
+<Call c="16" l="187" n="items_line_total" t="F"/>
+<Call c="16" l="192" n="__mbox_ok" t="F"/>
+<Call c="16" l="195" n="items_line_total" t="F"/>
+<Call c="13" l="201" n="order_select" t="F"/>
+<Call c="14" l="202" n="order_query" t="F"/>
+<Call c="11" l="206" n="__mbox_ok" t="F"/>
+</Fct>
+<Fct c="1" el="67" l="55" n="main()" t="F" v="pub">
+<Call c="8" l="63" n="orditems_dialog" t="F"/>
+</Fct>
+</File>
+<File n="sqlstock.4gl" s="2" ts="20191224093912888">
+<Fct c="10" el="46" l="4" n="display_stocklist()" t="F" v="pub"/>
+</File>
+</WorkspaceDatabase>

@@ -1,0 +1,112 @@
+
+SCHEMA mydb
+
+ACTION DEFAULTS
+  ACTION find (TEXT="Find", IMAGE="find", COMMENT="Query database")
+  ACTION new (TEXT="New", IMAGE="new", COMMENT="New order")
+  ACTION save (TEXT="Save", IMAGE="disk", COMMENT="Check and save order info")
+  ACTION append (TEXT="Line", IMAGE="new", COMMENT="New order line")
+  ACTION delete (TEXT="Del", IMAGE="eraser", COMMENT="Delete current order line")
+  ACTION first (TEXT="First", COMMENT="Move to first order in list")
+  ACTION previous (TEXT="Prev", COMMENT="Move to previous order in list")
+  ACTION next (TEXT="Next", COMMENT="Move to next order in list")
+  ACTION last (TEXT="Last", COMMENT="Move to last order in list")
+  ACTION quit (TEXT="Quit", COMMENT="Exit the program", IMAGE="quit")
+END
+
+TOPMENU
+  GROUP ord (TEXT="Orders")
+    COMMAND find
+    COMMAND new
+    COMMAND save
+    SEPARATOR
+    COMMAND quit
+  END
+  GROUP ord (TEXT="Items")
+    COMMAND append
+    COMMAND delete
+  END
+  GROUP navi (TEXT="Navigation")
+    COMMAND first
+    COMMAND previous
+    COMMAND next
+    COMMAND last
+  END
+  GROUP help (TEXT="Help")
+    COMMAND about (TEXT="About")
+  END
+END
+
+TOOLBAR
+  ITEM find
+  ITEM new
+  ITEM save
+  SEPARATOR
+  ITEM append
+  ITEM delete
+  SEPARATOR
+  ITEM first
+  ITEM previous
+  ITEM next
+  ITEM last
+  SEPARATOR
+  ITEM quit
+END
+
+LAYOUT
+ VBOX 
+  GROUP
+    GRID
+    {
+      Store #:[f01  ] [f02                                          ]  
+      Order #:[f03  ]  Order Date:[f04         ] Ship By:[f06       ]
+      Factory:[f05  ]             [f07                              ]   
+                                         Order Total:[f14           ]
+    }
+    END
+  END -- GROUP
+  TABLE
+   {
+     Stock#  Description       Qty     Unit    Price       Total
+    [f08    |f09              |f10    |f11    |f12        |f13      ]
+    [f08    |f09              |f10    |f11    |f12        |f13      ]
+    [f08    |f09              |f10    |f11    |f12        |f13      ]
+    [f08    |f09              |f10    |f11    |f12        |f13      ]
+   }
+  END
+ END -- VBOX 
+END 
+
+TABLES
+  customer, orders, items, stock
+END
+
+ATTRIBUTES
+BUTTONEDIT f01 = orders.store_num, REQUIRED, ACTION=zoom1;
+EDIT       f02 = customer.store_name, NOENTRY;
+EDIT       f03 = orders.order_num, NOENTRY;
+DATEEDIT   f04 = orders.order_date;
+EDIT       f05 = orders.fac_code, UPSHIFT;
+EDIT       f06 = orders.ship_instr;
+CHECKBOX   f07 = orders.promo, TEXT="Promotional",NOT NULL,
+                 VALUEUNCHECKED="N", VALUECHECKED="Y"; 
+BUTTONEDIT f08 = items.stock_num, REQUIRED, ACTION=zoom2;
+LABEL      f09 = stock.description;
+EDIT       f10 = items.quantity, REQUIRED;
+LABEL      f11 = stock.unit;
+LABEL      f12 = items.price;
+LABEL      f13 = formonly.line_total TYPE DECIMAL(9,2);
+EDIT       f14 = formonly.order_total TYPE DECIMAL(9,2), NOENTRY;
+END
+
+INSTRUCTIONS
+SCREEN RECORD sa_items(
+   items.stock_num,
+   stock.description,
+   items.quantity,
+   stock.unit,
+   items.price,
+   line_total
+  )
+END
+

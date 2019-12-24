@@ -1,0 +1,27 @@
+
+SCHEMA mydb
+
+LAYOUT
+TABLE
+{
+  Id       Description 
+ [f01     |f02                                          ]
+ [f01     |f02                                          ]
+ [f01     |f02                                          ]
+ [f01     |f02                                          ]
+}
+END
+END
+
+TABLES 
+   stock
+END
+
+ATTRIBUTES
+EDIT f01=stock.stock_num;
+EDIT f02=stock.description;
+END
+
+INSTRUCTIONS
+SCREEN RECORD sa_stock (stock.*);
+END

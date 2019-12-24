@@ -1,0 +1,36 @@
+
+SCHEMA mydb
+
+LAYOUT
+GRID
+{
+<g g1                                        >
+ Store name: [fc                      :fe   ]
+<                                            >
+<t t1                                        >
+  Id   Name                  City
+ [f01 |f02                  |f03            ]
+ [f01 |f02                  |f03            ]
+ [f01 |f02                  |f03            ]
+ [f01 |f02                  |f03            ]
+<                                            >
+}
+END
+END
+
+TABLES 
+   customer
+END
+
+ATTRIBUTES
+GROUP g1: TEXT="Filter";
+EDIT fc = customer.store_name;
+BUTTON fe: fetch, IMAGE="filter";
+EDIT f01=FORMONLY.s_num;
+EDIT f02=FORMONLY.s_name;
+EDIT f03=FORMONLY.s_city;
+END
+
+INSTRUCTIONS
+SCREEN RECORD sa_cust (FORMONLY.*);
+END

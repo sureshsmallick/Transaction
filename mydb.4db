@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Schema id="{e20db75e-b396-40d9-b315-16c195175a22}" version="4.0">
+  <ExtractionSettings last="SQLite">
+    <ExtractionOptions casens="LowerCase" cvmeth="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ignerr="true" systab="false" type="SQLite"/>
+  </ExtractionSettings>
+  <Table name="account" isView="false" status="U">
+    <Column fglLength="80" fglType="256" name="userid" notNull="true" order="1" status="U"/>
+    <Column fglLength="80" fglType="256" name="email" notNull="true" order="2" status="U"/>
+    <Column fglLength="80" fglType="256" name="firstname" notNull="true" order="3" status="U"/>
+    <Column fglLength="80" fglType="256" name="lastname" notNull="true" order="4" status="U"/>
+    <Column fglLength="2" fglType="0" name="acstatus" notNull="false" order="5" status="U"/>
+    <Column fglLength="80" fglType="256" name="addr1" notNull="true" order="6" status="U"/>
+    <Column fglLength="40" fglType="0" name="addr2" notNull="false" order="7" status="U"/>
+    <Column fglLength="80" fglType="256" name="city" notNull="true" order="8" status="U"/>
+    <Column fglLength="80" fglType="0" name="state" notNull="false" order="9" status="U"/>
+    <Column fglLength="20" fglType="256" name="zip" notNull="true" order="10" status="U"/>
+    <Column fglLength="3" fglType="256" name="country" notNull="true" order="11" status="U"/>
+    <Column fglLength="80" fglType="256" name="phone" notNull="true" order="12" status="U"/>
+    <Column fglLength="80" fglType="256" name="langpref" notNull="true" order="13" status="U"/>
+    <Column fglLength="10" fglType="0" name="favcategory" notNull="false" order="14" status="U"/>
+    <Column fglLength="4" fglType="2" name="mylistopt" notNull="false" order="15" status="U"/>
+    <Column fglLength="4" fglType="2" name="banneropt" notNull="false" order="16" status="U"/>
+    <Column fglLength="3" fglType="256" name="sourceapp" notNull="true" order="17" status="U"/>
+    <Index indexColumns="userid" indexConstraint="unique" name="sqlite_autoindex_account_1" status="U"/>
+  </Table>
+  <Table name="category" isView="false" status="U">
+    <Column fglLength="10" fglType="256" name="catid" notNull="true" order="1" status="U"/>
+    <Column fglLength="2" fglType="1" name="catorder" notNull="false" order="2" status="U"/>
+    <Column fglLength="80" fglType="0" name="catname" notNull="false" order="3" status="U"/>
+    <Column fglLength="255" fglType="0" name="catdesc" notNull="false" order="4" status="U"/>
+    <Column fglLength="255" fglType="0" name="catpic" notNull="false" order="5" status="U"/>
+    <Index indexColumns="catid" indexConstraint="unique" name="sqlite_autoindex_category_1" status="U"/>
+  </Table>
+  <Table name="country" isView="false" status="U">
+    <Column fglLength="3" fglType="0" name="code" notNull="false" order="1" status="U"/>
+    <Column fglLength="50" fglType="0" name="codedesc" notNull="false" order="2" status="U"/>
+    <Index indexColumns="code" indexConstraint="unique" name="sqlite_autoindex_country_1" status="U"/>
+  </Table>
+  <Table name="customer" isView="false" status="U">
+    <Column fglLength="4" fglType="258" name="store_num" notNull="true" order="1" status="U"/>
+    <Column fglLength="30" fglType="0" name="store_name" notNull="false" order="2" status="U"/>
+    <Column fglLength="20" fglType="0" name="addr" notNull="false" order="3" status="U"/>
+    <Column fglLength="20" fglType="0" name="addr2" notNull="false" order="4" status="U"/>
+    <Column fglLength="15" fglType="0" name="city" notNull="false" order="5" status="U"/>
+    <Column fglLength="2" fglType="0" name="state" notNull="false" order="6" status="U"/>
+    <Column fglLength="5" fglType="0" name="zipcode" notNull="false" order="7" status="U"/>
+    <Column fglLength="30" fglType="0" name="contact_name" notNull="false" order="8" status="U"/>
+    <Column fglLength="18" fglType="0" name="phone" notNull="false" order="9" status="U"/>
+  </Table>
+  <Table name="customers" isView="false" status="U">
+    <Column fglLength="4" fglType="258" name="customer_num" notNull="true" order="1" status="U"/>
+    <Column fglLength="30" fglType="0" name="fname" notNull="false" order="2" status="U"/>
+    <Column fglLength="30" fglType="0" name="lname" notNull="false" order="3" status="U"/>
+    <Column fglLength="30" fglType="201" name="company" notNull="false" order="4" status="U"/>
+    <Column fglLength="20" fglType="0" name="addr" notNull="false" order="5" status="U"/>
+    <Column fglLength="20" fglType="0" name="addr2" notNull="false" order="6" status="U"/>
+    <Column fglLength="20" fglType="0" name="city" notNull="false" order="7" status="U"/>
+    <Column fglLength="15" fglType="0" name="state" notNull="false" order="8" status="U"/>
+    <Column fglLength="5" fglType="0" name="zipcode" notNull="false" order="9" status="U"/>
+    <Column fglLength="15" fglType="0" name="phone" notNull="false" order="10" status="U"/>
+  </Table>
+  <Table name="emp" isView="false" status="U">
+    <Column fglLength="4" fglType="2" name="id" notNull="false" order="1" status="U"/>
+  </Table>
+  <Table name="factory" isView="false" status="U">
+    <Column fglLength="3" fglType="256" name="fac_code" notNull="true" order="1" status="U"/>
+    <Column fglLength="15" fglType="0" name="fac_name" notNull="false" order="2" status="U"/>
+  </Table>
+  <Table name="inventory" isView="false" status="U">
+    <Column fglLength="10" fglType="256" name="itemid" notNull="true" order="1" status="U"/>
+    <Column fglLength="4" fglType="258" name="qty" notNull="true" order="2" status="U"/>
+    <Index indexColumns="itemid" indexConstraint="unique" name="sqlite_autoindex_inventory_1" status="U"/>
+  </Table>
+  <Table name="item" isView="false" status="U">
+    <Column fglLength="10" fglType="256" name="itemid" notNull="true" order="1" status="U"/>
+    <Column fglLength="10" fglType="256" name="productid" notNull="true" order="2" status="U"/>
+    <Column fglLength="2562" fglType="5" name="listprice" notNull="false" order="3" status="U"/>
+    <Column fglLength="2562" fglType="5" name="unitcost" notNull="false" order="4" status="U"/>
+    <Column fglLength="4" fglType="2" name="supplier" notNull="false" order="5" status="U"/>
+    <Column fglLength="2" fglType="0" name="itstatus" notNull="false" order="6" status="U"/>
+    <Column fglLength="80" fglType="0" name="attr1" notNull="false" order="7" status="U"/>
+    <Column fglLength="80" fglType="0" name="attr2" notNull="false" order="8" status="U"/>
+    <Column fglLength="80" fglType="0" name="attr3" notNull="false" order="9" status="U"/>
+    <Column fglLength="80" fglType="0" name="attr4" notNull="false" order="10" status="U"/>
+    <Column fglLength="80" fglType="0" name="attr5" notNull="false" order="11" status="U"/>
+    <Index indexColumns="itemid" indexConstraint="unique" name="sqlite_autoindex_item_1" status="U"/>
+  </Table>
+  <Table name="items" isView="false" status="U">
+    <Column fglLength="4" fglType="258" name="order_num" notNull="true" order="1" status="U"/>
+    <Column fglLength="4" fglType="258" name="stock_num" notNull="true" order="2" status="U"/>
+    <Column fglLength="2" fglType="1" name="quantity" notNull="false" order="3" status="U"/>
+    <Column fglLength="2050" fglType="5" name="price" notNull="false" order="4" status="U"/>
+  </Table>
+  <Table name="lineitem" isView="false" status="U">
+    <Column fglLength="4" fglType="258" name="orderid" notNull="true" order="1" status="U"/>
+    <Column fglLength="4" fglType="258" name="linenum" notNull="true" order="2" status="U"/>
+    <Column fglLength="10" fglType="256" name="itemid" notNull="true" order="3" status="U"/>
+    <Column fglLength="4" fglType="258" name="quantity" notNull="true" order="4" status="U"/>
+    <Column fglLength="2562" fglType="261" name="unitprice" notNull="true" order="5" status="U"/>
+    <Index indexColumns="orderid, linenum" indexConstraint="unique" name="sqlite_autoindex_lineitem_1" status="U"/>
+  </Table>
+  <Table name="orders" isView="false" status="U">
+    <Column fglLength="4" fglType="258" name="order_num" notNull="true" order="1" status="U"/>
+    <Column fglLength="4" fglType="7" name="order_date" notNull="false" order="2" status="U"/>
+    <Column fglLength="4" fglType="258" name="store_num" notNull="true" order="3" status="U"/>
+    <Column fglLength="3" fglType="0" name="fac_code" notNull="false" order="4" status="U"/>
+    <Column fglLength="10" fglType="0" name="ship_instr" notNull="false" order="5" status="U"/>
+    <Column fglLength="1" fglType="0" name="promo" notNull="false" order="6" status="U"/>
+  </Table>
+  <Table name="orderstatus" isView="false" status="U">
+    <Column fglLength="4" fglType="258" name="orderid" notNull="true" order="1" status="U"/>
+    <Column fglLength="4" fglType="258" name="linenum" notNull="true" order="2" status="U"/>
+    <Column fglLength="4" fglType="263" name="mdate" notNull="true" order="3" status="U"/>
+    <Column fglLength="2" fglType="256" name="orstatus" notNull="true" order="4" status="U"/>
+    <Index indexColumns="orderid, linenum" indexConstraint="unique" name="sqlite_autoindex_orderstatus_1" status="U"/>
+  </Table>
+  <Table name="product" isView="false" status="U">
+    <Column fglLength="10" fglType="256" name="productid" notNull="true" order="1" status="U"/>
+    <Column fglLength="10" fglType="256" name="catid" notNull="true" order="2" status="U"/>
+    <Column fglLength="80" fglType="0" name="prodname" notNull="false" order="3" status="U"/>
+    <Column fglLength="255" fglType="0" name="proddesc" notNull="false" order="4" status="U"/>
+    <Column fglLength="255" fglType="0" name="prodpic" notNull="false" order="5" status="U"/>
+    <Index indexColumns="productid" indexConstraint="unique" name="sqlite_autoindex_product_1" status="U"/>
+  </Table>
+  <Table name="seqreg" isView="false" status="U">
+    <Column fglLength="30" fglType="457" name="sr_name" notNull="true" order="1" status="U"/>
+    <Column fglLength="4" fglType="258" name="sr_last" notNull="true" order="2" status="U"/>
+    <Index indexColumns="sr_name" indexConstraint="unique" name="sqlite_autoindex_seqreg_1" status="U"/>
+  </Table>
+  <Table name="signon" isView="false" status="U">
+    <Column fglLength="80" fglType="256" name="userid" notNull="true" order="1" status="U"/>
+    <Column fglLength="25" fglType="256" name="password" notNull="true" order="2" status="U"/>
+    <Index indexColumns="userid" indexConstraint="unique" name="sqlite_autoindex_signon_1" status="U"/>
+  </Table>
+  <Table name="state" isView="false" status="U">
+    <Column fglLength="2" fglType="256" name="state_code" notNull="true" order="1" status="U"/>
+    <Column fglLength="15" fglType="0" name="state_name" notNull="false" order="2" status="U"/>
+  </Table>
+  <Table name="stock" isView="false" status="U">
+    <Column fglLength="4" fglType="258" name="stock_num" notNull="true" order="1" status="U"/>
+    <Column fglLength="3" fglType="256" name="fac_code" notNull="true" order="2" status="U"/>
+    <Column fglLength="15" fglType="0" name="description" notNull="false" order="3" status="U"/>
+    <Column fglLength="2050" fglType="5" name="reg_price" notNull="false" order="4" status="U"/>
+    <Column fglLength="2050" fglType="5" name="promo_price" notNull="false" order="5" status="U"/>
+    <Column fglLength="4" fglType="7" name="price_updated" notNull="false" order="6" status="U"/>
+    <Column fglLength="4" fglType="0" name="unit" notNull="false" order="7" status="U"/>
+  </Table>
+  <Table name="students" isView="false" status="U">
+    <Column fglLength="4" fglType="2" name="id" notNull="false" order="1" status="U"/>
+    <Column fglLength="20" fglType="0" name="fname" notNull="false" order="2" status="U"/>
+    <Column fglLength="20" fglType="0" name="lname" notNull="false" order="3" status="U"/>
+    <Column fglLength="4" fglType="2" name="age" notNull="false" order="4" status="U"/>
+    <Index indexColumns="id" indexConstraint="primaryKey" name="sqlite_autoindex_students_1" status="U"/>
+  </Table>
+  <Table name="supplier" isView="false" status="U">
+    <Column fglLength="4" fglType="258" name="suppid" notNull="true" order="1" status="U"/>
+    <Column fglLength="80" fglType="0" name="name" notNull="false" order="2" status="U"/>
+    <Column fglLength="2" fglType="256" name="sustatus" notNull="true" order="3" status="U"/>
+    <Column fglLength="80" fglType="0" name="addr1" notNull="false" order="4" status="U"/>
+    <Column fglLength="80" fglType="0" name="addr2" notNull="false" order="5" status="U"/>
+    <Column fglLength="80" fglType="0" name="city" notNull="false" order="6" status="U"/>
+    <Column fglLength="80" fglType="0" name="state" notNull="false" order="7" status="U"/>
+    <Column fglLength="5" fglType="0" name="zip" notNull="false" order="8" status="U"/>
+    <Column fglLength="80" fglType="0" name="phone" notNull="false" order="9" status="U"/>
+    <Index indexColumns="suppid" indexConstraint="unique" name="sqlite_autoindex_supplier_1" status="U"/>
+  </Table>
+</Schema>
